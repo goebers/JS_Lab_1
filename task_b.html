@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -15,13 +15,31 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
-    <h1>Form validation JavaScript</h1>
+<body style="background-color: aliceblue;">
+  <div id="task-a">
+    <h1 id="kauno">Form validation HTML5</h1>
 
-    <form>
-        <!-- your input elements here -->
+    <form name="form1337" id="form" novalidate>
+      *First name:<br>
+      <input id="firstname" class="form" type="text" name="firstname"><br>
+      *Last name:<br>
+      <input id="lastname" class="form" type="text" name="lastname"><br>
+      *Email:<br>
+      <input id="email" class="form" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
+      Phone number:<br>
+      <input id="pnum" class="form" type="tel" name="pnum" pattern="\+358[0-9]{9}"><br>
+      Address:<br>
+      <input id="address" class="form" type="text" name="address"><br>
+      Postal code:<br>
+      <input id="postcode" class="form" type="text" name="postcode" pattern="[0-9]{5}"><br>
+      *Password:<br>
+      <input id="password" class="form" type="password" name="password"><br><br>
+
+      <input id="submitBtn" type="button" value="Submit">
     </form>
-    
+    <h3 id="footer">Fields with * symbol are required.</h3>
+  </div>
+
     <script src="js/main.js"></script>
 </body>
 

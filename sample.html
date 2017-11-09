@@ -21,7 +21,40 @@
         <p class="example">Lets try to select this...</p>
         <p class="example">...and this simultaneously.</p>
     </main>
-  
+
 </body>
+
+<script type="text/javascript">
+"use strict"
+  // select element with id attribute 'test'
+  const pTest = document.querySelector('#test');
+  // modify the content of pTest
+  pTest.innerHTML = '<a href src="http://www.metropolia.fi">Metropolia</a>';
+  // change/add style attribute
+  pTest.setAttribute('style', 'font-weight: bold;');
+
+  // select multiple elements
+  const pExample = document.querySelectorAll('.example');
+  // pExample is an array use [index] to select items
+  // pExample[0].innerHTML = 'first example p';
+  // pExample[1].innerHTML = 'second example p';
+
+  /*
+  pExample[0].addEventListener('click', (eventName) => {
+    console.log('click');
+  });
+  */
+
+  let texts = ['first example p', 'second example p'];
+
+  pExample.forEach( (element, index) => {
+    console.log(index);
+    element.addEventListener('click', (eventName) => {
+      console.log(eventName.target);
+      eventName.target.innerHTML = texts[index];
+    });
+  } );
+
+</script>
 
 </html>
